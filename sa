@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人檔案 | [您的姓名]</title>
+    <style>
+        /* 基本重置與字體設定 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f3f2ef; /* LinkedIn 經典背景色 */
+            color: rgba(0, 0, 0, 0.9);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+
+        /* 主容器：限制寬度並置中 */
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        /* 卡片共用樣式 */
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.08), 0 2px 3px rgba(0,0,0,0.04);
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        /* --- 頂部個人資料區塊 --- */
+        .profile-header {
+            position: relative;
+        }
+        
+        /* 背景橫幅 (Banner) */
+        .banner {
+            height: 200px;
+            background-color: #a0b4b7; /* 預設底色 */
+            /* 若要換成您自己的背景圖，請修改下方的 url */
+            background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=800&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* 個人大頭照 */
+        .profile-photo-container {
+            padding: 0 24px;
+            margin-top: -75px; /* 讓頭像往上蓋住橫幅 */
+        }
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+            object-fit: cover;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* 基本資料文字 */
+        .basic-info {
+            padding: 16px 24px 24px 24px;
+        }
+        .basic-info h1 {
+            font-size: 24px;
+            margin: 0 0 4px 0;
+            font-weight: 600;
+        }
+        .basic-info h2 {
+            font-size: 16px;
+            font-weight: 400;
+            margin: 0 0 8px 0;
+            color: rgba(0, 0, 0, 0.9);
+        }
+        .location {
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.6);
+            margin: 0 0 16px 0;
+        }
+        .contact-btn {
+            background-color: #0a66c2; /* LinkedIn 藍色 */
+            color: white;
+            border: none;
+            border-radius: 24px;
+            padding: 6px 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .contact-btn:hover {
+            background-color: #004182;
+        }
+
+        /* --- 內容區塊共用樣式 --- */
+        .section-content {
+            padding: 24px;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0 0 16px 0;
+        }
+        
+        /* 關於我 */
+        .about-text {
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.9);
+            white-space: pre-line; /* 保留換行符號 */
+        }
+
+        /* 工作經歷 */
+        .experience-item {
+            margin-bottom: 24px;
+            display: flex;
+            gap: 16px;
+        }
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+        .company-logo {
+            width: 48px;
+            height: 48px;
+            background-color: #e8e8e8;
+            border-radius: 4px; /* LinkedIn 的公司 logo 是方形微圓角 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #666;
+            flex-shrink: 0;
+        }
+        .exp-details h3 {
+            font-size: 16px;
+            margin: 0 0 4px 0;
+        }
+        .exp-details h4 {
+            font-size: 14px;
+            font-weight: 400;
+            margin: 0 0 4px 0;
+            color: rgba(0, 0, 0, 0.9);
+        }
+        .exp-date {
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.6);
+            margin: 0 0 8px 0;
+        }
+        .exp-desc {
+            font-size: 14px;
+            margin: 0;
+        }
+        .exp-desc ul {
+            padding-left: 20px;
+            margin-top: 4px;
+        }
+
+        /* 技能標籤 */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .skill-badge {
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.75);
+            padding: 6px 12px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 16px;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="card profile-header">
+        <div class="banner"></div>
+        <div class="profile-photo-container">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="我的大頭照" class="profile-photo">
+        </div>
+        <div class="basic-info">
+            <h1>[王大明 David Wang]</h1>
+            <h2>[擁有 5 年經驗的資深前端工程師 ｜ 專注於 React 與使用者體驗]</h2>
+            <p class="location">[台灣，台北市]</p>
+            <a href="mailto:your.email@example.com" class="contact-btn">聯絡我</a>
+        </div>
+    </div>
+
+    <div class="card section-content">
+        <h2 class="section-title">關於</h2>
+        <div class="about-text">
+            [請在此填寫您的自傳與簡介。]
+            我是一名充滿熱情的數位工作者，擅長在複雜的數據中找到商業價值。過去幾年專注於...
+            
+            我的核心目標是透過技術與設計的結合，為使用者帶來更好的體驗。工作之餘，我喜歡關注最新的科技趨勢與參與開源社群。
+        </div>
+    </div>
+
+    <div class="card section-content">
+        <h2 class="section-title">經歷</h2>
+        
+        <div class="experience-item">
+            <div class="company-logo">公司A</div>
+            <div class="exp-details">
+                <h3>[資深前端工程師]</h3>
+                <h4>[科技股份有限公司 A] · 全職</h4>
+                <p class="exp-date">[2021年 5月] – [目前] · [2年 11個月]</p>
+                <div class="exp-desc">
+                    <ul>
+                        <li>主導公司核心產品的 UI/UX 重構，提升了 30% 的使用者留存率。</li>
+                        <li>帶領 3 人團隊，導入敏捷式開發流程，使專案交付速度提升 20%。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid rgba(0,0,0,0.08); margin: 24px 0;">
+
+        <div class="experience-item">
+            <div class="company-logo">公司B</div>
+            <div class="exp-details">
+                <h3>[前端工程師]</h3>
+                <h4>[新創科技有限公司 B] · 全職</h4>
+                <p class="exp-date">[2018年 7月] – [2021年 4月] · [2年 10個月]</p>
+                <div class="exp-desc">
+                    <ul>
+                        <li>負責電商平台網頁開發，優化網頁載入速度達 40%。</li>
+                        <li>與行銷團隊合作開發多個高流量活動 Landing Page。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card section-content">
+        <h2 class="section-title">技能</h2>
+        <div class="skills-container">
+            <span class="skill-badge">專案管理</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">React.js</span>
+            <span class="skill-badge">UI/UX 設計</span>
+            <span class="skill-badge">跨部門溝通</span>
+            <span class="skill-badge">數據分析</span>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
