@@ -39,7 +39,7 @@
         .banner {
             height: 200px;
             background-color: #a0b4b7; /* 預設底色 */
-            /* Link banner mặc định */
+            /* ĐÃ THAY LINK BANNER TẠI ĐÂY */
             background-image: url('https://share.google/k0Gg7Bh30ti7gG9Pl');
             background-size: cover;
             background-position: center;
@@ -182,7 +182,7 @@
     <div class="card profile-header">
         <div class="banner"></div>
         <div class="profile-photo-container">
-            <img src="image_1.png" alt="我的大頭照" class="profile-photo">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&auto=format&fit=crop" alt="我的大頭照" class="profile-photo">
         </div>
         <div class="basic-info">
             <h1>邊氏瓊 (Quynh)</h1>
@@ -212,7 +212,7 @@
             </div>
         </div>
 
-    </div>
+        </div>
 
     <div class="card section-content">
         <h2 class="section-title">技能</h2>
