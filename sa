@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個人檔案 | 邊氏瓊 (Quynh)</title>
+    <title>個人檔案 | [您的姓名]</title>
     <style>
         /* 基本重置與字體設定 */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f3f2ef;
+            background-color: #f3f2ef; /* LinkedIn 經典背景色 */
             color: rgba(0, 0, 0, 0.9);
             margin: 0;
             padding: 20px;
             line-height: 1.5;
         }
 
+        /* 主容器：限制寬度並置中 */
         .container {
             max-width: 780px;
             margin: 0 auto;
         }
 
+        /* 卡片共用樣式 */
         .card {
             background-color: #ffffff;
             border-radius: 8px;
@@ -33,17 +35,20 @@
             position: relative;
         }
         
+        /* 背景橫幅 (Banner) */
         .banner {
             height: 200px;
-            background-color: #a0b4b7;
-            background-image: url('https://images.unsplash.com/photo-1557683316-973673baf926?w=800&q=80'); /* 預設背景圖 */
+            background-color: #a0b4b7; /* 預設底色 */
+            /* 若要換成您自己的背景圖，請修改下方的 url */
+            background-image: url('https://share.google/k0Gg7Bh30ti7gG9Pl');
             background-size: cover;
             background-position: center;
         }
 
+        /* 個人大頭照 */
         .profile-photo-container {
             padding: 0 24px;
-            margin-top: -75px;
+            margin-top: -75px; /* 讓頭像往上蓋住橫幅 */
         }
         .profile-photo {
             width: 150px;
@@ -55,6 +60,7 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
+        /* 基本資料文字 */
         .basic-info {
             padding: 16px 24px 24px 24px;
         }
@@ -67,7 +73,7 @@
             font-size: 16px;
             font-weight: 400;
             margin: 0 0 8px 0;
-            color: rgba(0, 0, 0, 0.7);
+            color: rgba(0, 0, 0, 0.9);
         }
         .location {
             font-size: 14px;
@@ -75,11 +81,11 @@
             margin: 0 0 16px 0;
         }
         .contact-btn {
-            background-color: #0a66c2;
+            background-color: #0a66c2; /* LinkedIn 藍色 */
             color: white;
             border: none;
             border-radius: 24px;
-            padding: 6px 20px;
+            padding: 6px 16px;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
@@ -90,6 +96,7 @@
             background-color: #004182;
         }
 
+        /* --- 內容區塊共用樣式 --- */
         .section-content {
             padding: 24px;
         }
@@ -99,27 +106,31 @@
             margin: 0 0 16px 0;
         }
         
+        /* 關於我 */
         .about-text {
-            font-size: 15px;
-            color: rgba(0, 0, 0, 0.8);
-            white-space: pre-line;
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.9);
+            white-space: pre-line; /* 保留換行符號 */
         }
 
-        /* 經歷與教育 */
+        /* 工作經歷 */
         .experience-item {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             display: flex;
             gap: 16px;
         }
-        .logo-placeholder {
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+        .company-logo {
             width: 48px;
             height: 48px;
             background-color: #e8e8e8;
-            border-radius: 4px;
+            border-radius: 4px; /* LinkedIn 的公司 logo 是方形微圓角 */
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 12px;
+            font-weight: bold;
             color: #666;
             flex-shrink: 0;
         }
@@ -133,6 +144,19 @@
             margin: 0 0 4px 0;
             color: rgba(0, 0, 0, 0.9);
         }
+        .exp-date {
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.6);
+            margin: 0 0 8px 0;
+        }
+        .exp-desc {
+            font-size: 14px;
+            margin: 0;
+        }
+        .exp-desc ul {
+            padding-left: 20px;
+            margin-top: 4px;
+        }
 
         /* 技能標籤 */
         .skills-container {
@@ -143,10 +167,10 @@
         .skill-badge {
             font-size: 14px;
             font-weight: 600;
-            color: rgba(0, 0, 0, 0.7);
-            padding: 6px 14px;
+            color: rgba(0, 0, 0, 0.75);
+            padding: 6px 12px;
             border: 1px solid rgba(0, 0, 0, 0.15);
-            border-radius: 20px;
+            border-radius: 16px;
             background-color: transparent;
         }
     </style>
@@ -158,51 +182,69 @@
     <div class="card profile-header">
         <div class="banner"></div>
         <div class="profile-photo-container">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" alt="邊氏瓊" class="profile-photo">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="我的大頭照" class="profile-photo">
         </div>
         <div class="basic-info">
-            <h1>邊氏瓊 (Quynh)</h1>
-            <h2>黎明技術學院 | 大學二年級學生</h2>
-            <p class="location">台灣，台北市</p>
-            <a href="mailto:shiqiongbian@gmail.com" class="contact-btn">發送郵件</a>
+            <h1>[邊氏瓊]</h1>
+            <h2>[sdt 0961143572 gmail : shiqiongbian@gmail.com]</h2>
+            <p class="location">[越南，議案]</p>
+            <a href="mailto:your.email@example.com" class="contact-btn">聯絡我</a>
         </div>
     </div>
 
     <div class="card section-content">
         <h2 class="section-title">關於</h2>
         <div class="about-text">
-           您好！我是邊氏瓊。目前就讀於黎明技術學院（二年級），專注於行政管理與跨文化溝通。我具備中越雙語能力，對於行政庶務管理與多元文化交流充滿熱情。
+           我是邊氏瓊，我今年是大學二年級學生。學校 ： 黎明技術學院
+
         </div>
     </div>
 
     <div class="card section-content">
-        <h2 class="section-title">教育背景</h2>
+        <h2 class="section-title">經歷</h2>
+        
         <div class="experience-item">
-            <div class="logo-placeholder">學校</div>
+            <div class="company-logo">公司A</div>
             <div class="exp-details">
-                <h3>黎明技術學院</h3>
-                <h4>大學部 · 二年級在學中</h4>
-                <p style="font-size: 14px; color: rgba(0,0,0,0.6);">2024年 - 目前</p>
+                <h3>[資深前端工程師]</h3>
+                <h4>[科技股份有限公司 A] · 全職</h4>
+                <p class="exp-date">[2021年 5月] – [目前] · [2年 11個月]</p>
+                <div class="exp-desc">
+                    <ul>
+                        <li>主導公司核心產品的 UI/UX 重構，提升了 30% 的使用者留存率。</li>
+                        <li>帶領 3 人團隊，導入敏捷式開發流程，使專案交付速度提升 20%。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid rgba(0,0,0,0.08); margin: 24px 0;">
+
+        <div class="experience-item">
+            <div class="company-logo">公司B</div>
+            <div class="exp-details">
+                <h3>[前端工程師]</h3>
+                <h4>[新創科技有限公司 B] · 全職</h4>
+                <p class="exp-date">[2018年 7月] – [2021年 4月] · [2年 10個月]</p>
+                <div class="exp-desc">
+                    <ul>
+                        <li>負責電商平台網頁開發，優化網頁載入速度達 40%。</li>
+                        <li>與行銷團隊合作開發多個高流量活動 Landing Page。</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="card section-content">
-        <h2 class="section-title">專業技能與語言</h2>
+        <h2 class="section-title">技能</h2>
         <div class="skills-container">
-            <span class="skill-badge">中越雙語翻譯</span>
-            <span class="skill-badge">行政庶務管理</span>
-            <span class="skill-badge">跨文化溝通</span>
-            <span class="skill-badge">Microsoft Office</span>
-            <span class="skill-badge">團隊協作</span>
-        </div>
-    </div>
-
-    <div class="card section-content">
-        <h2 class="section-title">聯絡資訊</h2>
-        <div class="about-text">
-           📧 <strong>Email:</strong> shiqiongbian@gmail.com
-           📞 <strong>電話:</strong> 0961-143-572
+            <span class="skill-badge">專案管理</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">React.js</span>
+            <span class="skill-badge">UI/UX 設計</span>
+            <span class="skill-badge">跨部門溝通</span>
+            <span class="skill-badge">數據分析</span>
         </div>
     </div>
 
