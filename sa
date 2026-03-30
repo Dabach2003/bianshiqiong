@@ -158,7 +158,7 @@
     <div class="card profile-header">
         <div class="banner"></div>
         <div class="profile-photo-container">
-            <img src="" alt="邊氏瓊" class="profile-photo">
+            <img src="images/1.jpg" alt="邊氏瓊" class="profile-photo">
         </div>
         <div class="basic-info">
             <h1>邊氏瓊 (Quynh)</h1>
